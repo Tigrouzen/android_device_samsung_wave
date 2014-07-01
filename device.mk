@@ -196,9 +196,13 @@ PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.dexopt-flags=v=a,o=v,m=y,u=y
 
 # Set default USB interface and default to internal SD as /sdcard
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-    persist.sys.usb.config=mass_storage \
-    persist.sys.vold.switchexternal=1
+PRODUCT_DEFAULT_PROPERTY_OVERRID​ES += \
+ro.secure=0 \
+ro.allow.mock.location=0 \
+ro.debuggable=1 \
+persist.sys.usb.config=mass_stor​​age,adb \
+persist.service.adb.root=1 \
+persist.sys.vold.switchexternal=​1
 
 include frameworks/native/build/phone-hdpi-512-dalvik-heap.mk
 
